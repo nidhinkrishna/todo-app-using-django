@@ -1,9 +1,30 @@
-<h2>Login</h2>
+{% extends 'base/main.html' %}
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Register">
-</form>
+{% load static %}
 
-<p>Already have an account?<a href="{% url 'login' %}">Login</a></p>
+{% block link %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+{% endblock link %}
+
+{% block content %}
+
+<div class="container1">
+    <h2>Register</h2>
+
+    <form action="" method="post" class='register_form'>
+        {% csrf_token %}
+        <label for="">{{form.username.label}}:</label>
+        {{form.username}}
+
+        <label for="">{{form.password1.label}}:</label>
+        {{form.password1}}
+
+        <label for="">{{form.password2.label}}:</label>
+        {{form.password2}}
+        <input type="submit" value="Register" class='btn1'>
+    </form>
+    
+    <p class='footer'>Already have an account?<a href="{% url 'login' %}">Login</a></p>
+</div>
+
+{% endblock content %}
