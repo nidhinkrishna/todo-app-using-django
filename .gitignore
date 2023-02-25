@@ -1,1 +1,3 @@
-/settings.py
+Todo\Todo\settings.py
+Todo\db.sqlite3
+Todo\Todo\__pycache__
