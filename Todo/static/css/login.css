@@ -76,6 +76,31 @@ h2{
 .register_form input{
   margin-bottom: 14px;
 }
+@media  (max-width:700px) {
+  .container,.container1{
+    width: 300px;
+   
+    
+  }
+  input{
+    width: 250px;
+    
+    font-size: 15px; 
+    
+  
+  }
+  .btn,.btn1{
+    left: 50%;
+  }
+  label{
+    font-size: 18px;
+  }
+  .footer{
+    font-size: 18px;
+  }
+  
+  
+}
 
 
 

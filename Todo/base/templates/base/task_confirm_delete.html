@@ -1,7 +1,18 @@
-<a href="{% url 'tasks' %}">Go back</a>
+{% extends 'base/main.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static '/css/delete.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <a href="{% url 'tasks' %}">⬅Go back</a>
 
 <form action="" method="post">
     {% csrf_token %}
-    <p>Are u sure want to delete this task? "{{task}}" </p>
-    <input type="submit" value="Delete">
+    <p class='delete'>Are u sure want to delete this task? "{{task}}" </p>
+    <input type="submit" value="Delete" class='btn'>
 </form>
+
+</div>
+{% endblock content %}
