@@ -1,9 +1,20 @@
-<h3>Task Form</h3>
+{% extends 'base/main.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static '/css/delete.css' %}">
+{% endblock link %}
 
-<a href="{% url 'tasks' %}">Go back</a>
+
+{% block content %}
+<div class="container1">
+    <h3>Task Form</h3>
+
+<a href="{% url 'tasks' %}">⬅Go back</a>
 
 <form action="" method='POST'>
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit">
+    <input type="submit" class='form-btn'>
 </form>
+</div>
+{% endblock content %}

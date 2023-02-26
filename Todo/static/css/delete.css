@@ -1,6 +1,8 @@
 body{
     background-color: plum;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .container{
     position: absolute;
@@ -35,7 +37,7 @@ body{
     color: white;
     cursor: pointer;
 }
-.container a{
+.container a,.container1 a{
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -67,5 +69,105 @@ body{
     }
     .delete{
         font-size: 16px;
+    }
+}
+
+/* taskform styling */
+.container1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 600px;
+    background-color: rgba(137, 43, 226, 0.295);
+    text-align: center;
+    border-radius: 20px;
+}
+.container1 label {
+    display: block;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 5px;
+    
+   
+}
+
+.container1 a{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.container1 input{
+    height: 25px;
+    width: 250px;
+}
+.container1 .form-btn{
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+}
+.container1 .form-btn:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.container1 h3{
+    color: white;
+    font-size: 23px;
+    border-bottom: solid plum;
+    padding-bottom: 5px;
+}
+textarea{
+    border-radius: 5px;
+}
+input{
+    border-radius: 5px;
+}
+@media (max-width:700px) {
+    .container1{
+        width: 450px;
+        height: 400px;
+        
+    }
+    .container1 label{
+        font-size: 18px;
+        
+    }
+    .container1 input{
+        height: 20px;
+        width: 150px;
+    }
+    .container1 .form-btn{
+        height: 30px;
+        width: 100px;
+       
+    }
+    textarea{
+        height: 80px;
+        width: 250px;
+    }
+   
+}
+@media (max-width:420px) {
+    .container1{
+        width: 300px;
+        height: 370px;
+
+    }
+    textarea{
+        height: 60px;
+        width: 200px;
+    }
+    .container1 h3{
+        font-size: 18px;
+    }
+    .container1 a{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 15px;
     }
 }
