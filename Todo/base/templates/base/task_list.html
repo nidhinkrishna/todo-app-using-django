@@ -1,32 +1,67 @@
-{% if request.user.is_authenticated %}
-  <p>{{request.user}}</p>
-  <a href="{% url 'logout' %}">Logout</a>
-{% else %}
-<a href="{% url 'login' %}">Login</a>
-{% endif %}
-<hr>
-<h1>My To do list</h1>
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static '/css/main.css' %}">
+{% endblock link %}
 
 
-
-<a href="{% url 'create' %}">Add Item</a>
-<form action="" method="get">
-    <input type="text" name='search-area' value='{{search_input}}'>
-    <input type="submit" value="Search">
+ {% block content %}
+ <div class="container">
+   <div class="head">
+    <h2>Hello! {{request.user}}</h2>
+    <p>You have {{count}} task{{count|pluralize}} to complete</p>
+    <a href="{% url 'logout' %}" class='logout'>Logout</a>
+  
+   </div>
+  
+  <hr>
+  
+  
+  
+  
+  <div class="search">
+    
+  <form action="" method="get">
+    <input type="text" name='search-area' value='{{search_input}}' class='search-bar'>
+    <input type="submit" value="Search" class='search-btn'>
 </form>
-
-<table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-        
-    </tr>
+<a href="{% url 'create' %}">➕</a>
+  </div>
+ 
+    
     {% for task in tasks%}
-    <tr>
-        <td><a href="{% url 'update' task.id %}">{{task.title}}</a></td>
-        <td><a href="{% url 'delete' task.id %}">Delete</a></td>
-    </tr>
+        <div class="tasks-list">
+        {% if task.complete %}
+          <div class="complete-icon"></div>
+            <del><a href="{% url 'update' task.id %}" class='title'>{{task.title}}</a></del>
+            <a href="{% url 'delete' task.id %}" class='x-mark'>❌</a>
+            
+        
+          
+        {% else %}
+        
+        
+          <div class="incomplete-icon"></div>
+            <a href="{% url 'update' task.id %}" class='title'>{{task.title}}</a>
+            <a href="{% url 'delete' task.id %}" class='x-mark'>❌</a>
+       
+        </div>
+        {% endif %}
+          
+
+       
+
     {% empty %}
-    <h4>No items in the list</h4>
+    <h4 class='incomplete'>No items in the list <a href="{% url 'create' %}">Add Item</a></h4>
+    <a href="{% url 'tasks' %}" class='back'>⬅Go back</a>
+
     {% endfor %}
-</table>
+ 
+  
+  
+          
+  
+ </div>
+ 
+ {% endblock content %}
