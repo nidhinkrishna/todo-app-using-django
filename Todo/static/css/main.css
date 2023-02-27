@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    position: relative;
+    margin-top: 50px;
+
+    width: 550px;
+    border: 1px solid plum;
+    margin-bottom: 35px;
+   
+}
+.head{
+    
+    height: 150px;
+   
+    background:rgb(168, 114, 168);
+ 
+  
+}
+.logout{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+.head h2{
+   color: white;
+   font-size: 35px;
+   padding: 20px;
+   font-weight: lighter;
+}
+.head p{
+    padding-left: 20px;
+    font-size: 22px;
+    color: white;
+}
+.search{
+    display: flex;
+    margin-top: 15px;
+    padding-left: 10px;
+    
+}
+.search-bar{
+    height: 35px;
+    width: 250px;
+
+}
+.search-btn{
+    height: 35px;
+    border: none;
+    background-color: rgb(168, 114, 168);
+    color: white;
+    padding: 5px;
+    width: 60px;
+    cursor: pointer;
+}
+.search a{
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+   
+    font-size: 25px;
+}
+.tasks-list{
+    margin:10px ;
+    padding: 13px;
+    border:1px solid rgba(221, 160, 221, 0.575);
+    height: 50px;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.tasks-list a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.tasks-list .title{
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.tasks-list .x-mark{
+    position: absolute;
+    right: 20px;
+}
+.complete-icon{
+    width: 20px;
+    height: 20px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+}
+.incomplete-icon{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(158, 158, 158);
+    border-radius: 50%;
+    margin-right: 10px;
+    
+}
+.incomplete{
+    font-size: 25px;
+    font-weight: lighter;
+    margin: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+
+}
+.incomplete a{
+    color: rgba(255, 0, 0, 0.795);
+    text-decoration: none;
+}
+.back{
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    
+}
