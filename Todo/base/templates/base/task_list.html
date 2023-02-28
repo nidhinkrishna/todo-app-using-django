@@ -30,25 +30,29 @@
   </div>
  
     
-    {% for task in tasks%}
-        <div class="tasks-list">
-        {% if task.complete %}
-          <div class="complete-icon"></div>
-            <del><a href="{% url 'update' task.id %}" class='title'>{{task.title}}</a></del>
-            <a href="{% url 'delete' task.id %}" class='x-mark'>❌</a>
-            
-        
-          
-        {% else %}
-        
-        
-          <div class="incomplete-icon"></div>
-            <a href="{% url 'update' task.id %}" class='title'>{{task.title}}</a>
-            <a href="{% url 'delete' task.id %}" class='x-mark'>❌</a>
-       
-        </div>
-        {% endif %}
-          
+    
+    
+  {% for task in tasks%}
+  <div class="tasks-list">
+  {% if task.complete %}
+    <div class="complete-icon"></div>
+      <del><a href="{% url 'update' task.id %}" class='title'>{{task.title}}</a></del>
+      <a href="{% url 'delete' task.id %}" class='x-mark'>❌</a>
+    </div>
+      
+  
+    
+  {% else %}
+
+  
+    <div class="tasks-list">
+    <div class="incomplete-icon"></div>
+      <a href="{% url 'update' task.id %}" class='title'>{{task.title}}</a>
+      <a href="{% url 'delete' task.id %}" class='x-mark'>❌</a>
+ 
+ 
+  </div>
+  {% endif %}
 
        
 
